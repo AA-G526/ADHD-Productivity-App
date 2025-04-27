@@ -52,3 +52,39 @@ export default tseslint.config({
   },
 })
 ```
+project structure :
+
+focusnest
+├──frontend/
+│   ├──public/
+│   ├──src/
+│   │   ├──assets/
+│   │   ├──components/
+│   │   │   ├──FocusMode/
+│   │   │   │   └──TimerWidget.tsx
+│   │   │   ├──TaskSystem/
+│   │   │   │   ├──TaskCard.tsx
+│   │   │   │   ├──TaskForm.tsx
+│   │   │   │   └──TaskList.tsx
+│   │   │   └──ui/
+│   │   ├──layouts/
+│   │   │   ├──BottomNav.tsx
+│   │   │   └──Navbar.tsx
+│   │   ├──lib/
+│   │   ├──pages/
+│   │   │   ├──Home.tsx
+│   │   │   └──Focusmode.tsx
+│   │   ├──App.tsx
+│   │   ├──main.tsx
+│   │   └──types.ts
+│   └── package.json
+└──backend/
+    ├── controllers/
+    │   └── taskController.js
+    ├── models/
+    │   └── Task.js
+    ├── routes/
+    │   └── taskRoutes.js
+    ├── .env
+    ├── server.js
+    └── package.json
