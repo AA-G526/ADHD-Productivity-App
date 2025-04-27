@@ -1,30 +1,53 @@
 import { useState } from "react";
-import TimerWidget from "@/components/FocusMode/TimerWidget";
+import TimerWidget from "@/components/FocusMode/TimerWidgetFocus";
 import { Task } from "@/types";
 
 export default function FocusMode() {
-  // Temporary mock task, later this comes from TaskList
-  const mockTask: Task = {
-    id: "1",
-    title: "Finish portfolio layout",
-    tag: "Design",
-    completed: false
-  };
+  const mockTasks: Task[] = [
+    { id: "1", title: "Finish portfolio layout", tag: "Design", completed: false },
+    { id: "2", title: "Write blog post", tag: "Writing", completed: false },
+    { id: "3", title: "Study algorithms", tag: "Study", completed: false }
+  ];
 
-  const [task] = useState<Task>(mockTask);
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
 
   return (
-    <div className="px-6 py-10 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-2 text-center">{task.title}</h1>
-      <span className="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 mb-6">
-        {task.tag}
-      </span>
+    <div className="px-6 py-10 flex flex-col items-center min-h-screen">
+      {!selectedTask ? (
+        <div className="w-full max-w-md">
+          <h1 className="text-2xl font-bold mb-4 text-center">Select a task to focus</h1>
+          <div className="flex flex-col gap-4">
+            {mockTasks.map((task) => (
+              <button
+                key={task.id}
+                onClick={() => setSelectedTask(task)}
+                className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+              >
+                <h2 className="text-lg font-semibold">{task.title}</h2>
+                <span className="text-sm text-gray-500">{task.tag}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center w-full">
+          <h1 className="text-3xl font-bold mb-2 text-center">{selectedTask.title}</h1>
+          <span className="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 mb-6">
+            {selectedTask.tag}
+          </span>
 
-      <div className="w-full max-w-sm">
-        <TimerWidget task={task} />
-      </div>
+          <div className="w-full max-w-sm">
+            <TimerWidget task={selectedTask} />
+          </div>
 
-      {/* Optional: add notes or break timer here */}
+          <button
+            onClick={() => setSelectedTask(null)}
+            className="mt-6 text-sm text-gray-500 underline"
+          >
+            ⬅️ Back to task selection
+          </button>
+        </div>
+      )}
     </div>
   );
 }
