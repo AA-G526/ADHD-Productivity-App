@@ -1,4 +1,15 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis as RawXAxis,
+  YAxis as RawYAxis,
+  Tooltip,
+  ResponsiveContainer,
+} from 'recharts';
+
+const XAxis = RawXAxis as unknown as React.FC<any>;
+const YAxis = RawYAxis as unknown as React.FC<any>;
+
 
 export default function ProductivityChart() {
   const data = [
@@ -12,13 +23,13 @@ export default function ProductivityChart() {
   ];
 
   return (
-    <div className='pr-8'>
+    <div className="pr-8">
       <ResponsiveContainer width="100%" height={200}>
-        <BarChart data={data}  className="text-white">
+        <BarChart data={data}>
           <XAxis dataKey="day" />
           <YAxis allowDecimals={false} />
           <Tooltip />
-          <Bar dataKey="sessions" />
+          <Bar dataKey="sessions" fill="#4f46e5" />
         </BarChart>
       </ResponsiveContainer>
     </div>

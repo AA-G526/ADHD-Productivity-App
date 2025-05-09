@@ -12,7 +12,7 @@ export default function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-base-200 outline-1 z-50">
-      <div className="flex justify-around py-2">
+      <div className="flex justify-around py-2 tabs">
         {navItems.map((item) => (
           <Link
             key={item.path}
