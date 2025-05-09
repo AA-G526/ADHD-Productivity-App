@@ -5,15 +5,16 @@ import { Task } from "@/types";
 type TimerWidgetProps = {
   task?: Task;
   initialMode?: "work" | "break";
+  showTimer: boolean;
+  setShowTimer: (val: boolean) => void;
 };
 
-export default function TimerWidget({ task, initialMode = "work" }: TimerWidgetProps) {
+export default function TimerWidget({ task, initialMode = "work", showTimer, setShowTimer }: TimerWidgetProps) {
   const [isRunning, setIsRunning] = useState(false);
   const [mode, setMode] = useState<"work" | "break">(initialMode);
   const [secondsLeft, setSecondsLeft] = useState<number>(
     initialMode === "work" ? 25 * 60 : 5 * 60
   );
-  const [showTimer, setShowTimer] = useState(false);
 
   const switchMode = () => {
     const nextMode = mode === "work" ? "break" : "work";
@@ -54,14 +55,13 @@ export default function TimerWidget({ task, initialMode = "work" }: TimerWidgetP
             key="timer"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="flex flex-col items-center gap-4 mb-6"
           >
             <h2 className="text-xl font-bold">
               {task ? `Focusing on: ${task.title}` : mode === "work" ? "Focus Time" : "Break Time"}
             </h2>
-            <p className="text-6xl font-mono">{formatTime(secondsLeft)}</p>
+            <p className="text-6xl font-mono duration-150">{formatTime(secondsLeft)}</p>
             <div className="flex gap-4 mt-2">
               {!isRunning && (
                 <button className="btn btn-primary" onClick={() => setIsRunning(true)}>

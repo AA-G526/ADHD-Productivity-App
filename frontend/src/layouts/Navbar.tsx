@@ -1,5 +1,6 @@
 import { LuBrain } from "react-icons/lu";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
+import Streak from "@/components/Profile/StreakCounter";
 
 export default function Navbar() {
 
@@ -9,7 +10,7 @@ export default function Navbar() {
       <LuBrain className="size-8 sm:size-10"/>
       <h1 className="text-3xl font-semibold">Focusnest</h1>
       </div>
-      <CgProfile className="size-8 sm:size-10"/>
+    <Streak />
     </div>
   )
 }

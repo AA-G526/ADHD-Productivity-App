@@ -21,7 +21,7 @@ export default function FocusMode() {
               <button
                 key={task.id}
                 onClick={() => setSelectedTask(task)}
-                className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-[#E55DA8] hover:text-white dark:hover:bg-zinc-800 transition"
+                className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-[#E55DA8] hover:text-white dark:hover:bg-zinc-800 duration-150 cursor-pointer"
               >
                 <h2 className="text-lg font-semibold">{task.title}</h2>
                 <span className="text-sm text-gray-500">{task.tag}</span>

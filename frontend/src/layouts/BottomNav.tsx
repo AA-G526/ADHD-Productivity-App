@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, Timer } from "lucide-react";
-
+import { CgProfile } from "react-icons/cg";
 export default function BottomNav() {
   const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/", icon: <Home size={20} /> },
     { name: "Focus", path: "/focus", icon: <Timer size={20} /> },
+    { name: "Profile", path: "/profile", icon: <CgProfile size={20} /> }
   ];
 
   return (
@@ -16,7 +17,7 @@ export default function BottomNav() {
           <Link
             key={item.path}
             to={item.path}
-            className={`flex flex-col items-center text-sm ${
+            className={`flex flex-col items-center text-sm font-medium ${
               location.pathname === item.path
                 ? ""
                 : "text-zinc-500"
