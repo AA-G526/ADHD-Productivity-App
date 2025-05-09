@@ -1,18 +1,26 @@
-// src/components/Profile/SessionHistory.tsx
 export default function SessionHistory() {
-  // TODO: map over real sessions
-  const mockSessions = [
-    { date: "2025-05-01", task: "Read chapters", count: 2 },
-    { date: "2025-05-02", task: "Code feature", count: 3 },
+  const sessions = [
+    { date: "May 7", task: "Finish blog post", duration: "25m" },
+    { date: "May 7", task: "Study algorithms", duration: "25m" },
+    { date: "May 6", task: "Portfolio layout", duration: "25m" },
   ];
 
   return (
-    <ul className="space-y-2">
-      {mockSessions.map((s) => (
-        <li key={s.date} className="p-2 bg-white rounded shadow">
-          <strong>{s.date}</strong>: {s.task} — {s.count} session(s)
-        </li>
-      ))}
-    </ul>
+    <div className="mb-6">
+      <h3 className="text-lg font-semibold mb-4">Recent Sessions</h3>
+      <ul className="space-y-2 flex flex-col gap-1">
+        {sessions.map((session, index) => (
+          <li
+            key={index}
+            className="p-3 rounded-md outline-2 bg-base-300 shadow-sm"
+          >
+            <div className="text-sm font-semibold dark:text-gray-100">{session.task}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400">
+              {session.date} • {session.duration}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

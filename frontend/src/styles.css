@@ -6,6 +6,7 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark;
 }
+
 @plugin "daisyui/theme" {
   name: "synthwave";
   default: false;
@@ -40,6 +41,7 @@
   --depth: 0;
   --noise: 0;
 }
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

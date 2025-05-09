@@ -7,7 +7,7 @@ import BottomNav from "./layouts/BottomNav"
 function App() {
 
   return (
-    <div className="h-screen" data-theme="synthwave">
+    <div className="min-h-screen" data-theme="synthwave">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/focus" element={<FocusMode />} />
