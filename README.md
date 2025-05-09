@@ -52,6 +52,8 @@ export default tseslint.config({
   },
 })
 ```
+
+```js
 project structure :
 
 focusnest
@@ -88,3 +90,4 @@ focusnest
     ├── .env
     ├── server.js
     └── package.json
+```
