@@ -10,9 +10,9 @@ export default function StreakCounter() {
   }, []);
   return (
     <div>      
-    <span className="flex items-center gap-1 h-8 sm:h-12 bg-[#4A35D1] rounded-xl px-4 text-secondary">
-    <p className="text-[1.7rem] sm:text-[2rem] font-bold">{streak}</p>
-      <FaFireFlameCurved className="size-6  z-10 sm:size-7"/>
+    <span className="flex items-center gap-1 h-8 sm:h-10 bg-[#4A35D1] rounded-full px-3 text-secondary">
+    <p className="text-xl sm:text-[1.4em] font-bold">{streak}</p>
+      <FaFireFlameCurved className="size-4  z-10 sm:size-5"/>
     </span></div>
   )
 }

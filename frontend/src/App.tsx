@@ -4,6 +4,7 @@ import FocusMode from "./pages/Focusmode"
 import Profile from "./pages/Profile"
 import BottomNav from "./layouts/BottomNav"
 import LoginForm from "./pages/Login"
+import SignupForm from "./components/SignupForm"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/focus" element={<FocusMode />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
       </Routes>
       <BottomNav/>
     </div>

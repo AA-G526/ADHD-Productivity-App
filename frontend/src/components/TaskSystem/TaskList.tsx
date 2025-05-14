@@ -32,18 +32,19 @@ export default function TaskList() {
   return (
     <div>
       <div className="flex justify-between items-center mt-6">
-        <h2 className="text-2xl font-semibold">Your Tasks</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold">Your Tasks</h2>
         <button
           onClick={() => setShowForm(!showForm)}
           className="text-base cursor-pointer flex items-center gap-1"
         >
-          <span className="text-lg">＋</span> Add task
+          <span className="text-md sm:text-lg">＋</span> Add task
         </button>
       </div>
 
       {showForm && <TaskForm onAdd={handleAdd} />}
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-col sm:gap-1
+      ">
         {tasks.map(task => (
           <TaskCard
             key={task.id}

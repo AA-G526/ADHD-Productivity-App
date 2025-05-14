@@ -20,9 +20,9 @@ export default function Home() {
   return (
     <div>
     <Navbar />
-      <div className="px-8">
-        <h2 className="text-2xl mb-4 font-semibold">Today's Goal</h2>
-        <div className="flex gap-2 sm:gap-3 items-center py-3 sm:py-4 pl-2 sm:pl-4 rounded-md outline-2 opacity-90">
+      <div className="px-8 pt-4">
+        <h2 className="text-xl sm:text-2xl mb-4 font-semibold">Today's Goal</h2>
+        <div className="flex sm:gap-4 gap-1 font-light items-center py-2 sm:py-3 pl-2 sm:pl-4 rounded-md outline-slate-600 outline opacity-90">
           <input 
             type="checkbox" 
             checked={completed}
@@ -34,12 +34,11 @@ export default function Home() {
             placeholder="Add your main goal for today"
             value={goal}
             onChange={setGoalValue}
-            className={`text-base ${completed ? "line-through" : ""} font-semibold sm:text-xl w-full focus:outline-0 border-none`}
+            className={` ${completed ? "line-through" : ""} sm:text-lg font-semibold w-full focus:outline-0 border-none`}
           />
         </div>
 
         <div className="mt-8">
-          {/* 👇 Only show welcome text when Pomodoro is hidden */}
           {!showTimer && (
             <motion.h2 
             key="timer"
@@ -47,7 +46,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="text-2xl mb-6 font-semibold">
+            className="text-xl sm:text-2xl mb-6 font-semibold">
               Hey user,<br /> ready to focus?
             </motion.h2>
           )}

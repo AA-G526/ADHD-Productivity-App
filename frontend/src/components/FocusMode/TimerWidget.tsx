@@ -56,24 +56,24 @@ export default function TimerWidget({ task, initialMode = "work", showTimer, set
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-4 mb-6"
+            className="flex flex-col items-center gap-3 sm:gap-4 mb-6"
           >
-            <h2 className="text-xl font-bold">
+            <h2 className="text-2xl sm:text-4xl font-bold">
               {task ? `Focusing on: ${task.title}` : mode === "work" ? "Focus Time" : "Break Time"}
             </h2>
-            <p className="text-6xl font-mono duration-150">{formatTime(secondsLeft)}</p>
-            <div className="flex gap-4 mt-2">
+            <p className="text-5xl sm:text-7xl font-mono font-semibold duration-150">{formatTime(secondsLeft)}</p>
+            <div className="flex gap-4 sm:gap-8">
               {!isRunning && (
-                <button className="btn btn-primary" onClick={() => setIsRunning(true)}>
+                <button className="btn btn-primary px-5 sm:px-7" onClick={() => setIsRunning(true)}>
                   Start
                 </button>
               )}
               {isRunning && (
-                <button className="btn btn-warning" onClick={() => setIsRunning(false)}>
+                <button className="btn btn-warning px-5 sm:px-7" onClick={() => setIsRunning(false)}>
                   Pause
                 </button>
               )}
-              <button className="btn btn-outline" onClick={switchMode}>
+              <button className="btn btn-outline px-5 sm:px-7" onClick={switchMode}>
                 Skip
               </button>
             </div>
@@ -82,7 +82,7 @@ export default function TimerWidget({ task, initialMode = "work", showTimer, set
       </AnimatePresence>
 
       <button
-        className="btn btn-neutral text-xl w-full h-14"
+        className="btn btn-neutral text-base h-10 sm:text-lg sm:h-12 w-full"
         onClick={() => setShowTimer(!showTimer)}
       >
         {showTimer ? "Hide Pomodoro" : "Start Pomodoro"}
