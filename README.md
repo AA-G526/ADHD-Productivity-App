@@ -63,31 +63,20 @@ focusnest
 │   │   ├──assets/
 │   │   ├──components/
 │   │   │   ├──FocusMode/
-│   │   │   │   └──TimerWidget.tsx
+│   │   │   ├──Global/  
 │   │   │   ├──TaskSystem/
-│   │   │   │   ├──TaskCard.tsx
-│   │   │   │   ├──TaskForm.tsx
-│   │   │   │   └──TaskList.tsx
+│   │   │   ├──Profile/   
 │   │   │   └──ui/
+│   │   ├──hooks/
 │   │   ├──layouts/
-│   │   │   ├──BottomNav.tsx
-│   │   │   └──Navbar.tsx
 │   │   ├──lib/
 │   │   ├──pages/
-│   │   │   ├──Home.tsx
-│   │   │   └──Focusmode.tsx
 │   │   ├──App.tsx
 │   │   ├──main.tsx
-│   │   └──types.ts
-│   └── package.json
+│   └───└──types.ts
 └──backend/
     ├── controllers/
-    │   └── taskController.js
     ├── models/
-    │   └── Task.js
     ├── routes/
-    │   └── taskRoutes.js
-    ├── .env
-    ├── server.js
-    └── package.json
+    └── server.js
 ```
