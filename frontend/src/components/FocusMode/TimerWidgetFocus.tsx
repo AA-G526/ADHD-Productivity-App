@@ -55,10 +55,10 @@ export default function TimerWidget({ task }: TimerWidgetProps) {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="flex flex-col items-center gap-4 mb-6 w-full text-center"
     >
-      <h2 className="text-xl font-bold">
+      <h2 className="text-xl sm:text-2xl font-bold">
         {taskCompleted ? "✅ Task Completed!" : (mode === "work" ? "Focus Time" : "Break Time")}
       </h2>
-      <p className="text-6xl font-mono">{formatTime(secondsLeft)}</p>
+      <p className="text-6xl font-bold lg:text-7xl font-mono">{formatTime(secondsLeft)}</p>
 
       <div className="flex gap-4 mt-2">
         {isRunning ? (

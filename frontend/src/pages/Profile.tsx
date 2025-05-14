@@ -20,12 +20,12 @@ const sessionData = [
     const { ref: containerRef, width } = useContainerWidth<HTMLDivElement>();
 
     return (
-      <div className="max-w-3xl mx-auto px-6 pt-6 pb-16 bg-base-100">
+      <div className="lg:max-w-4xl max-w-2xl mx-auto px-6 pt-6 pb-16 bg-base-100">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-        <div className="flex flex-col items-center gap-4">
-            <div className="size-20 bg-gray-300 rounded-full" />
+        <div className="flex flex-col sm:flex-row sm:items-center sm:pt-4 sm:justify-between gap-4 mb-6">
+        <div className="flex flex-col md:flex-row lg:gap-6 items-center gap-4">
+            <div className="size-16 lg:size-20 bg-gray-300 rounded-full" />
             <div>
             <h2 className="text-xl font-bold">Username</h2>
             <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Mood: Focused</p>

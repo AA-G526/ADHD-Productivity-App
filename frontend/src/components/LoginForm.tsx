@@ -9,13 +9,14 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from "react-router-dom"
 
 export default function LoginForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
   return (
-    <div className="p-4 h-screen flex justify-center items-center">
+    <div className="p-4 flex justify-center items-center">
     <div className={cn("flex flex-col w-full max-w-92 gap-6", className)} {...props}>
       <Card className="bg-base-200 outline-2">
         <CardHeader>
@@ -46,7 +47,7 @@ export default function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" type="password" className="text-accent" required />
               </div>
               <button type="submit" className="w-full btn btn-neutral">
                 Login
@@ -57,9 +58,12 @@ export default function LoginForm({
             </div>
             <div className="mt-4 text-center text-sm text-slate-500">
               Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
-                <strong className="text-slate-300">Sign up</strong>
-              </a>
+              <Link
+               key={'/signup'}
+               to={'/signup'}
+              className="underline underline-offset-4">
+                <strong className="text-slate-300">Login</strong>
+              </Link>
             </div>
           </form>
         </CardContent>

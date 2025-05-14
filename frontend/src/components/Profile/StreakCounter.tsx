@@ -6,13 +6,14 @@ export default function StreakCounter() {
 
   useEffect(() => {
     // mock load
-    setStreak(5);
+    setStreak(0);
   }, []);
   return (
-    <div>      
+    <div>
     <span className="flex items-center gap-1 h-8 sm:h-10 bg-[#4A35D1] rounded-full px-3 text-secondary">
-    <p className="text-xl sm:text-[1.4em] font-bold">{streak}</p>
-      <FaFireFlameCurved className="size-4  z-10 sm:size-5"/>
-    </span></div>
+      <p className="text-xl sm:text-[1.4em] font-bold">{streak}</p>
+        <FaFireFlameCurved className="size-4  z-10 sm:size-5"/>
+      </span>    
+    </div>
   )
 }

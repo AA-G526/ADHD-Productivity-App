@@ -21,9 +21,9 @@ export default function FocusMode() {
               <button
                 key={task.id}
                 onClick={() => setSelectedTask(task)}
-                className="w-full p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-[#E55DA8] hover:text-white dark:hover:bg-zinc-800 duration-150 cursor-pointer"
+                className="w-full p-4 rounded-lg outline outline-gray-300 dark:border-gray-700 hover:bg-neutral hover:text-white dark:hover:bg-zinc-800 duration-150 cursor-pointer"
               >
-                <h2 className="text-lg font-semibold">{task.title}</h2>
+                <h2 className="text-md font-semibold">{task.title}</h2>
                 <span className="text-sm text-gray-500">{task.tag}</span>
               </button>
             ))}
@@ -31,18 +31,17 @@ export default function FocusMode() {
         </div>
       ) : (
         <div className="flex flex-col items-center w-full">
-          <h1 className="text-3xl font-bold mb-2 text-center">{selectedTask.title}</h1>
-          <span className="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-center">{selectedTask.title}</h1>
+          <span className="text-sm px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900 mb-4">
             {selectedTask.tag}
           </span>
-
           <div className="w-full max-w-sm">
             <TimerWidget task={selectedTask} />
           </div>
 
           <button
             onClick={() => setSelectedTask(null)}
-            className="mt-6 text-sm text-gray-500 underline"
+            className="mt-6 text-md text-gray-500 underline"
           >
             ⬅️ Back to task selection
           </button>

@@ -1,7 +1,7 @@
 import SignupForm from "@/components/SignupForm"
-export default function login() {
+export default function signup() {
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-4 md:p-10">
+    <div className="flex h-screen w-full items-center justify-center -translate-y-20">
       <div className="w-full max-w-sm">
         <SignupForm />
       </div>

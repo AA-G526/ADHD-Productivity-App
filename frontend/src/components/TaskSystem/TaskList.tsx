@@ -31,7 +31,7 @@ export default function TaskList() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mt-6">
+      <div className="flex justify-between items-center">
         <h2 className="text-xl sm:text-2xl font-semibold">Your Tasks</h2>
         <button
           onClick={() => setShowForm(!showForm)}
@@ -43,16 +43,21 @@ export default function TaskList() {
 
       {showForm && <TaskForm onAdd={handleAdd} />}
 
-      <div className="mt-4 flex flex-col sm:gap-1
-      ">
-        {tasks.map(task => (
-          <TaskCard
-            key={task.id}
-            task={task}
-            onToggle={handleToggle}
-            onDelete={handleDelete}
-          />
-        ))}
+      <div className="mt-4 flex flex-col sm:gap-1">
+        {tasks.length === 0 ? (
+          <p className="text-sm sm:text-base italic text-slate-500">
+            You have no tasks yet. Start by adding one!
+          </p>
+        ) : (
+          tasks.map(task => (
+            <TaskCard
+              key={task.id}
+              task={task}
+              onToggle={handleToggle}
+              onDelete={handleDelete}
+            />
+          ))
+        )}
       </div>
     </div>
   );
