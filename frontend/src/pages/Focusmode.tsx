@@ -12,7 +12,7 @@ export default function FocusMode() {
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
 
   return (
-    <div className="px-6 py-10 flex flex-col items-center min-h-screen">
+    <div className="px-6 py-10 flex flex-col items-center min-h-[95vh]">
       {!selectedTask ? (
         <div className="w-full max-w-md">
           <h1 className="text-2xl font-bold mb-4 text-center">Select a task to focus</h1>

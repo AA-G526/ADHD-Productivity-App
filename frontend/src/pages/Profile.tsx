@@ -4,7 +4,8 @@ import { useContainerWidth } from "@/hooks/useContainerWidth";
 import Stats from '@/components/Profile/Stats';
 import SessionHistory from '@/components/Profile/SessionHistory';
 import BadgesDisplay from '@/components/Profile/BadgesDisplay';
-
+import { useAuth } from '@/contexts/AuthContexts';
+import { Link } from 'react-router-dom';
 
 const sessionData = [
     { day: "Thu", sessions: 2 },
@@ -18,13 +19,26 @@ const sessionData = [
   
   export default function Profile() {
     const { ref: containerRef, width } = useContainerWidth<HTMLDivElement>();
-
+    const { session } = useAuth();
     return (
+    session ? (
+        <div className='flex min-h-[95vh] items-center justify-center'>
+        <Link
+        key="/Login"
+        to="/Login"
+        className="underline underline-offset-5 font-semibold"
+      >
+        Please Login to see the profile page
+      </Link>
+      </div>
+      )
+      : (
       <div className="lg:max-w-4xl max-w-2xl mx-auto px-6 pt-6 pb-16 bg-base-100">
         
         {/* Header */}
+
         <div className="flex flex-col sm:flex-row sm:items-center sm:pt-4 sm:justify-between gap-4 mb-6">
-        <div className="flex flex-col md:flex-row lg:gap-6 items-center gap-4">
+       <div className="flex flex-col md:flex-row lg:gap-6 items-center gap-4">
             <div className="size-16 lg:size-20 bg-gray-300 rounded-full" />
             <div>
             <h2 className="text-xl font-bold">Username</h2>
@@ -33,7 +47,6 @@ const sessionData = [
         </div>
         <button className="btn btn-outline w-full sm:w-auto">Edit Profile</button>
         </div>
-
         {/* Stats */}
         <Stats/>
   
@@ -80,8 +93,9 @@ const sessionData = [
         <SessionHistory />        
   
         {/* Badges */}
-        <BadgesDisplay />
+        <BadgesDisplay /> 
       </div>
+    )
     );
   }
   

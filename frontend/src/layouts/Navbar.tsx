@@ -3,9 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Home, Timer } from "lucide-react";
 import { CgProfile } from "react-icons/cg";
 import Streak from "@/components/Profile/StreakCounter";
+import { useAuth } from "@/contexts/AuthContexts";
+
 
 export default function Navbar() {
   const location = useLocation();
+  const { session } = useAuth();
 
   const navItems = [
     { name: "Home", path: "/", icon: <Home size={18} /> },
@@ -16,10 +19,10 @@ export default function Navbar() {
   return (
     <div className="flex mb-12 w-full bg-base-100 px-5 pt-5 pb-2 z-20 fixed items-center 2xl:px-32 xl:px-12 justify-between">
       {/* Logo */}
-      <div className="flex items-center gap-3">
+      <Link to='/' className="flex items-center gap-3">
         <LuBrain className="size-8 sm:size-10" />
         <h1 className="text-[1.5em] sm:text-[1.8em] font-semibold">Focusnest</h1>
-      </div>
+      </Link>
 
       {/* Navigation links - only visible on lg screens and up */}
       <div className="flex gap-12">
@@ -38,7 +41,17 @@ export default function Navbar() {
         ))}
         </div>
         {/* Streak counter */}
-      <Streak />
+        {
+          session ?           
+        <Link
+          key="/Login"
+          to="/Login"
+          className="underline underline-offset-5 font-semibold text-accent"
+        >
+          Login
+        </Link> : <Streak />
+        }
+
       </div>
 
     </div>

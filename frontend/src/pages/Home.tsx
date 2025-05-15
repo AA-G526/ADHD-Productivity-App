@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-[95vh] bg-base-100">
       <div className="px-4 sm:px-6 lg:px-12 py-6 mx-auto lg:max-w-7xl max-w-xl md:max-w-2xl">
         {/* Grid Layout for Desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:pt-12 gap-8 lg:gap-0">

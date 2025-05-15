@@ -8,6 +8,7 @@ import BottomNav from "./layouts/BottomNav";
 import Navbar from "./layouts/Navbar";
 
 function App() {
+
   return (
     <div data-theme="synthwave">  
       <Navbar/>
@@ -16,8 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/focus" element={<FocusMode />} />
           <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/signup" element={<SignupForm />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
       </Routes>
       </div>
       <div className="lg:hidden fixed bottom-0 left-0 right-0">
